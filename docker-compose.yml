@@ -1,0 +1,35 @@
+version: "3"
+services:
+  couchdb:
+    image: "couchdb:latest"
+    environment:
+      - COUCHDB_USER=admin
+      - COUCHDB_PASSWORD=admin
+    ports:
+      - 5984:5984
+    networks:
+      bot_cluster: 
+
+  mongo:
+    image: mongo:3.6
+    restart: always
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: root
+      MONGO_INITDB_ROOT_PASSWORD: examplei123!
+    networks:
+      bot_cluster: 
+
+  mongo-express:
+    image: mongo-express
+    restart: always
+    ports:
+      - 8081:8081
+    environment:
+      ME_CONFIG_MONGODB_ADMINUSERNAME: root
+      ME_CONFIG_MONGODB_ADMINPASSWORD: examplei123!
+    networks:
+      bot_cluster: 
+
+networks:
+  bot_cluster:
+    driver: bridge
