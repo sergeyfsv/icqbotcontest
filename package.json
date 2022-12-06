@@ -74,7 +74,7 @@
     "passport": "^0.4.0",
     "passport-local": "^1.0.0",
     "pug": "^2.0.4",
-    "qs": "^6.9.4",
+    "qs": "^6.9.7",
     "swagger-ui-express": "^4.1.4",
     "tress": "^1.1.4",
     "twilio": "^3.43.0"
